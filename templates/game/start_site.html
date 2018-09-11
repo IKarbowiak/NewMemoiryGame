@@ -1,0 +1,14 @@
+{% extends 'game/base.html' %}
+
+{% block content %}
+    <div>
+        <h2>Welcome in Memory Game</h2>
+        <h2>Please choose theme of your game to start play!</h2>
+    </div>
+    <br>
+    {% for theme in themes %}
+    <div class="decks">
+        <h3>{{theme}}<br></h3>
+    </div>
+    {% endfor %}
+{%endblock%}

@@ -1,0 +1,54 @@
+{% extends 'game/base.html' %}
+{% load static %}
+{% block content %}
+
+<script src="{% static 'js/deck.js' %}"></script>
+<div ng-app="flip" ng-controller="flipCtrl">
+    <div class="flip">
+        {% verbatim %}
+        <div class="panel" ng-repeat="card in deck">
+                <div class="card" ng-click="card.isFlipped=!card.isFlipped">
+                    <div class="face front" ng-if="card.isFlipped">
+                        <img class="card-img-top" src="{% static 'src/dogBack.jpeg' %}" alt="card image">
+                    </div>
+                    <div class="face back" ng-if="!card.isFlipped">
+                        <img class="card-img-top" src={{card.path}} alt="card image">
+                    </div>
+                    </div>
+                {% endfor %}
+        </div>
+        {% endverbatim %}
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+<!--<div id="js-flip-1" class="flip">-->
+<!--<div class="card-deck">-->
+    <!--{% for card in row %}-->
+    <!--<div class="card">-->
+
+        <!--<div class="face ">-->
+
+        <!--</div>-->
+                <!--<img class="card-img-top" src={{card.path}} alt="card image">-->
+                <!--<div class="card-body">-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+    <!--{% endfor %}-->
+<!--</div>-->
+
+<!-- 
+{% verbatim %}
+
+<div ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <button ng-click="myFunc()">OK</button>
+        <p>The button has been clicked {{count}} times.</p>
+    </div>
+</div>
+{% endverbatim %} -->

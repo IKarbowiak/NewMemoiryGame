@@ -1,54 +1,32 @@
 {% extends 'game/base.html' %}
-{% load static %}
 {% block content %}
 
-<script src="{% static 'js/deck.js' %}"></script>
-<div ng-app="flip" ng-controller="flipCtrl">
-    <div class="flip">
-        {% verbatim %}
-        <div class="panel" ng-repeat="card in deck">
-                <div class="card" ng-click="card.isFlipped=!card.isFlipped">
-                    <div class="face front" ng-if="card.isFlipped">
-                        <img class="card-img-top" src="{% static 'src/dogBack.jpeg' %}" alt="card image">
-                    </div>
-                    <div class="face back" ng-if="!card.isFlipped">
-                        <img class="card-img-top" src={{card.path}} alt="card image">
-                    </div>
-                    </div>
-                {% endfor %}
+    <!--<script type="text/javascript" src="/static/js/deck.js"></script>-->
+{% verbatim %}
+    <div ng-app="flip" ng-controller="flipCtrl">
+        <table style="width:100%">
+        <div class="flip">
+
+                <div class="panel">
+                    <tr ng-repeat="row in cards">
+                        <div class="panel">
+                            <th ng-repeat="card in row track by $index">
+                                <div class="card" ng-click="card.isFlipped=!card.isFlipped">
+                                    <div class="face front" ng-if="card.isFlipped">
+                                        <img class="card-img-top" src={{card.path}} alt="card image">
+                                    </div>
+                                    <div class="face back" ng-if="!card.isFlipped">
+                                        <img class="card-img-top" src="/static/src/dogBack.jpeg" alt="card image">
+                                    </div>
+                                </div>
+                            </th>
+                        </div>
+                    </tr>
+                </div>
+
         </div>
-        {% endverbatim %}
+        </table>
     </div>
-</div>
-
-
-
+{% endverbatim %}
 
 {% endblock %}
-
-<!--<div id="js-flip-1" class="flip">-->
-<!--<div class="card-deck">-->
-    <!--{% for card in row %}-->
-    <!--<div class="card">-->
-
-        <!--<div class="face ">-->
-
-        <!--</div>-->
-                <!--<img class="card-img-top" src={{card.path}} alt="card image">-->
-                <!--<div class="card-body">-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
-    <!--{% endfor %}-->
-<!--</div>-->
-
-<!-- 
-{% verbatim %}
-
-<div ng-app="myApp">
-    <div ng-controller="myCtrl">
-        <button ng-click="myFunc()">OK</button>
-        <p>The button has been clicked {{count}} times.</p>
-    </div>
-</div>
-{% endverbatim %} -->

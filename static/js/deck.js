@@ -2,7 +2,7 @@
     api_url = '/api/decks/';
 
     angular.module('flip')
-        .controller('flipCtrl', ['$scope', '$http', '$interval', '$uibModal', function($scope, $http, $interval, $uibModal){
+        .controller('flipCtrl', ['$scope', '$http', '$interval', function($scope, $http, $interval){
             $http.get('api/decks').then(function(response){
                 $scope.cards = [];
                 let row = [];
@@ -29,7 +29,6 @@
             $scope.end = false;
             $scope.flipCard = card => {
                 if (!card.isFlipped && flipped_cards.length < 2){
-                    // open_modal();
                     if (!start_game) {
                         console.log("HERE");
                         start_game = true;
@@ -43,7 +42,9 @@
                     if (flipped_cards.length === 2){
                         $scope.guesses ++;
                         if (flipped_cards[0].name === flipped_cards[1].name) {
-                            flipped_cards = []
+                            flipped_cards[0].isGuessed = true;
+                            flipped_cards[1].isGuessed = true;
+                            flipped_cards = [];
                         }
                         else {
                             setTimeout(_ => {
@@ -62,30 +63,19 @@
             }
 
             check_for_end = function () {
-                let deck_cards = $scope.cards.flat();
+//                let deck_cards = $scope.cards.flat();
+                let deck_cards = $scope.cards.reduce(function(a, b) {
+                    return a.concat(b);
+                })
                 console.log(deck_cards);
                 if (!(deck_cards.some(check))) {
                     $scope.end = true;
                     stop_game();
                     console.log("Game finished with time: ", $scope.time);
+                    $('#myModal').modal('show')
                     // open_modal()
                 }
             };
-
-            // open_modal = function () {
-            //     let modalInstance = $uibModal.open({
-            //         ariaLabelledBy: 'modal-title',
-            //         ariaDescribedBy: 'modal-body',
-            //         templateUrl: 'modalWindow.html',
-            //         controller: 'ModalHandlerController',
-            //         controllerAs: '$ctrl',
-            //         size: 'lg',
-            //         resolve: {
-            //
-            //         }
-            //     })
-            // };
-
 
             check = function(deck_card){
                 console.log("Check")
@@ -97,8 +87,14 @@
                 if (angular.isDefined(timer)){
                     $interval.cancel(timer);
                     timer = undefined;
+
+
                 }
             }
+
+            var flattened = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) {
+                return a.concat(b);
+            });
 
         // TODO wykrywanie kiedy ktoś wygrał
         // TODO zatrzymywanie interval -- $interval.cancel(timer);
@@ -116,4 +112,3 @@ angular.module('flip').controller("ModalHandlerController", function ($scope, $u
     }
 
 });
-

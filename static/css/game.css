@@ -79,6 +79,12 @@ h1, h2, h3, h4 {
 
 }
 
+.breed {
+    margin-top: 80%;
+    text-align: center;
+    position: relative;
+}
+
 /*
 .flip .card .flipped {
     transform: rotatex(-180deg);

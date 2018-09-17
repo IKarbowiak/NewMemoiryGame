@@ -20,13 +20,13 @@ class Command(BaseCommand):
                 deck.cards.add(card)
             deck.save()
 
-        for i in range(5 - decks.count()):
-            shuffle_cards = random.sample(list(cards), 10)
-            deck = Deck.objects.create(theme='Dogs', size=size)
-            for card in shuffle_cards:
-                deck.cards.add(card)
-            deck.save()
-            print("Create new Deck")
+        # for i in range(10 - decks.count()):
+        #     shuffle_cards = random.sample(list(cards), 10)
+        #     deck = Deck.objects.create(theme='Dogs', size=size)
+        #     for card in shuffle_cards:
+        #         deck.cards.add(card)
+        #     deck.save()
+        #     print("Create new Deck")
 
 
 

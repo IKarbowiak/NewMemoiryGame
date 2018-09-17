@@ -37,8 +37,9 @@
                 </button>
               </div>
               <div class="modal-body">
-                <p>Great! You finished game in {{ guesses }} moves in {{time | date: 'm:ss'}}.</p>
-                  Good job!
+                  <p class="message">Great! You finished game in {{ guesses }} moves in {{time | date: 'm:ss'}}.</p>
+                  <p class="message">Good job!</p>
+                  <img src="/static/src/win.gif">
               </div>
               <div class="modal-footer">
                 <!--<button type="button" class="btn btn-primary">Save changes</button>-->

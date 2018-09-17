@@ -30,7 +30,6 @@
             $scope.flipCard = card => {
                 if (!card.isFlipped && flipped_cards.length < 2){
                     if (!start_game) {
-                        console.log("HERE");
                         start_game = true;
                         timer = $interval(function () {
                             $scope.time += 1000;
@@ -59,7 +58,6 @@
                     }
                 }
 
-                // console.log($scope.cards)
             }
 
             check_for_end = function () {
@@ -67,19 +65,15 @@
                 let deck_cards = $scope.cards.reduce(function(a, b) {
                     return a.concat(b);
                 })
-                console.log(deck_cards);
                 if (!(deck_cards.some(check))) {
                     $scope.end = true;
                     stop_game();
-                    console.log("Game finished with time: ", $scope.time);
                     $('#myModal').modal('show')
                     // open_modal()
                 }
             };
 
             check = function(deck_card){
-                console.log("Check")
-                console.log(deck_card.isFlipped);
                 return deck_card.isFlipped === false;
             };
 

@@ -23,3 +23,6 @@ class DeckList(generics.ListCreateAPIView):
         serializer.save()
 
 
+class ThemesList(generics.ListCreateAPIView):
+    """ This class defines the create behavior of our rest api. """
+    queryset = Deck.objects.all().values_list('theme', flat=True).distinct()

@@ -18,7 +18,8 @@
 }
 
 .content {
-    margin-left: 40px
+    width: 100%;
+    margin-left: 40px;
 }
 
 h1, h2, h3, h4 {
@@ -64,24 +65,18 @@ h1, h2, h3, h4 {
 }
 
 .face {
-    width: 150px;
-    height: 150px;
-    horiz-align: middle
+    width: 100%;
+    height: 100%;
     text-align: center;
 }
 
 .card-img-top {
-    width: 100%;
-    height: 90%;
-    object-fit: contain;
-}
-
-.front {
-    position: absolute;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }
 
 .breed {
-    margin-top: 85%;
     text-align: center;
     position: relative;
     font-size: 15px;
@@ -90,6 +85,16 @@ h1, h2, h3, h4 {
 
 .message {
     text-align: center;
+}
+
+.deck {
+    width: 100%;
+}
+
+.guess {
+    padding-top: 15px;
+    text-align: center;
+
 }
 
 /*
@@ -128,9 +133,5 @@ h1, h2, h3, h4 {
     color: black;
 }
 
-.guess {
-    padding-top: 15px;
-    text-align: center;
 
-}
 */

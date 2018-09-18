@@ -1,9 +1,13 @@
 (function(){
     api_url = '/api/decks/';
 
-    angular.module('flip')
+    angular.module('memo')
         .controller('flipCtrl', ['$scope', '$http', '$interval', function($scope, $http, $interval){
-            $http.get('api/decks').then(function(response){
+            const theme_name = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.document.URL.length);
+            console.log(theme_name)
+
+
+            $http.get(`/api/decks/${theme_name}`).then(function(response){
                 $scope.cards = [];
                 let row = [];
                 let data_with_cards = [].concat(response.data, response.data);
@@ -12,7 +16,7 @@
                 });
                 let count = 0;
                 for (let card of data_with_cards) {
-                    let new_card = {'id': count, 'path': card.path, 'name': card.name, 'isFlipped': false};
+                    let new_card = { id: count, path: card.path, name: card.name, isFlipped: false };
                     row.push(new_card);
                     if (row.length === 5){
                         $scope.cards.push(row);
@@ -86,23 +90,6 @@
                 }
             }
 
-            var flattened = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) {
-                return a.concat(b);
-            });
-
-        // TODO wykrywanie kiedy ktoś wygrał
-        // TODO zatrzymywanie interval -- $interval.cancel(timer);
-
-
         }])
 
 })();
-
-
-angular.module('flip').controller("ModalHandlerController", function ($scope, $uibModalInstance) {
-
-    $scope.ok = function () {
-        $uibModalInstance.close('OK')
-    }
-
-});

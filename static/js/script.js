@@ -1,3 +1,3 @@
-var module = angular.module('flip', []);
+var module = angular.module('memo', []);
 // 'ui.bootstrap', 'dialogs'
 // ['ngTouch','ngAnimate','ui.bootstrap']

@@ -4,25 +4,26 @@ from game.models import Deck, MemoCard
 import random
 
 
-class DeckList(generics.ListCreateAPIView):
+class CardList(generics.ListCreateAPIView):
     """ This class defines the create behavior of our rest api. """
-    decks = Deck.objects.filter(theme='Dogs')
-    queryset = random.sample(list(decks), 1)[0].cards
-    # queryset = cards | cards
-    # random.seed()
-    # cards = list(deck_cards)
-    # cards.extend(deck_cards)
-    # random.shuffle(cards)
-    # cards = [card.name for card in cards]
-    # # cards_in_row = [[card for card in cards[i:i+4]] for i in range(0, len(cards), 4)]
-    # queryset = MemoCard.objects.filter(name__in=cards)
+    # decks = Deck.objects.filter(theme='Dogs')
+    # queryset = random.sample(list(decks), 1)[0].cards
     serializer_class = CardDeckSerializer
+
+    def get_queryset(self):
+        # queryset = Deck.objects.order_by('?').all()     # random order
+        queryset = MemoCard.objects.all().order_by('?')
+
+        theme = self.request.query_params.get('theme', '')
+        size = self.request.query_params.get('size', '10')
+
+        if theme:
+            queryset = queryset.filter(theme=theme)
+
+        return queryset[:int(size)]
 
     def perform_create(self, serializer):
         """ Save the post data when creating a new memocard. """
         serializer.save()
 
 
-class ThemesList(generics.ListCreateAPIView):
-    """ This class defines the create behavior of our rest api. """
-    queryset = Deck.objects.all().values_list('theme', flat=True).distinct()

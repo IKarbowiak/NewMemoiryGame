@@ -9,3 +9,5 @@ class CardDeckSerializer(serializers.ModelSerializer):
         model = MemoCard
         fields = ('id', 'name', 'path', 'theme')
 
+
+

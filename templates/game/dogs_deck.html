@@ -3,8 +3,8 @@
 
     <!--<script type="text/javascript" src="/static/js/deck.js"></script>-->
 {% verbatim %}
-    <div ng-controller="flipCtrl">
-            <table style="width:100%" class="panel">
+    <div ng-controller="flipCtrl" class="panel-1">
+            <table class="panel">
                     <tr ng-repeat="row in cards">
                         <div class="flip">
                             <td ng-repeat="card in row track by $index">
@@ -12,7 +12,7 @@
                                     <div class="card-body">
                                         <div class="face" ng-if="card.isFlipped">
                                             <img class="card-img-top" ng-src={{card.path}}>
-                                            <span ng-if="card.isGuessed" class="breed">{{ card.name }}</span>
+                                            <p ng-if="card.isGuessed" class="card-text breed">{{ card.name }}</p>
                                         </div>
                                         <div class="face" ng-if="!card.isFlipped">
                                             <img class="card-img-top" src="/static/src/dogBack.jpeg" alt="card image">

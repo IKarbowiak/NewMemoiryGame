@@ -3,8 +3,9 @@
 
     <!--<script type="text/javascript" src="/static/js/deck.js"></script>-->
 {% verbatim %}
-    <div ng-controller="flipCtrl" class="panel-1">
+    <div ng-controller="flipCtrl">
             <table class="panel">
+                <tbody>
                     <tr ng-repeat="row in cards">
                         <div class="flip">
                             <td ng-repeat="card in row track by $index">
@@ -22,6 +23,8 @@
                             </td>
                         </div>
                     </tr>
+                </tbody>
+
             </table>
 
         <div class="guess">

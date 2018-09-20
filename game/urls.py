@@ -6,7 +6,7 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('', views.start_site, name='start_site'),
-    url(r'^dogs/?', TemplateView.as_view(template_name='game/dogs_deck.html'))
+    url(r'^game/?', TemplateView.as_view(template_name='game/game.html'))
     # path('dogs/', views.dogs_deck, name='dogs_deck'),
 ]
 

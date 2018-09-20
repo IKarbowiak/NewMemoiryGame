@@ -1,0 +1,65 @@
+{% extends 'game/base.html' %}
+{% block content %}
+
+    <!--<script type="text/javascript" src="/static/js/deck.js"></script>-->
+{% verbatim %}
+    <div ng-controller="flipCtrl">
+        <div class="list-group-item list-group-item-warning guess">
+            Guesses: {{guesses}}
+            Time: {{time | date: 'm:ss'}}
+        </div>
+        <div class="deck">
+            <table class="panel">
+                <tbody>
+                <tr ng-repeat="row in cards">
+                    <div class="flip">
+                        <td ng-repeat="card in row track by $index">
+                            <div class="card text-center" ng-click="flipCard(card)">
+                                <div class="card-body">
+                                    <div class="face" ng-if="card.isFlipped">
+                                        <img class="card-img-top" ng-src={{card.path}}>
+                                        <p ng-if="card.isGuessed" class="card-text breed">{{ card.name }}</p>
+                                    </div>
+                                    <div class="face" ng-if="!card.isFlipped">
+                                        <img class="card-img-top" src="/static/src/{{ theme_name }}.png" alt="card image">
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+        <div class="modal" tabindex="-1" role="dialog" id="myModal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Game finished!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <p class="message">Great! You finished game in {{ guesses }} moves in {{time | date: 'm:ss'}}.</p>
+                  <p class="message">Good job!</p>
+                  <img src="/static/src/win.gif">
+              </div>
+              <div class="modal-footer">
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+
+
+
+{% endverbatim %}
+
+{% endblock %}

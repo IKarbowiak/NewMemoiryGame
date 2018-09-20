@@ -7,10 +7,10 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         # for filename in os.listdir("C:\\Users\\karbowia\\Documents\\MemoryGame\\memorygame\\static\\src\\dog_breeds\\"):
-        for filename in os.listdir("D:\\Programowanie\\MemoryGame\\MemoryGame_git\\static\\src\\dog_breeds"):
-            if filename.endswith(".jpg"):
+        for filename in os.listdir("D:\\Programowanie\\MemoryGame\\MemoryGame_git\\static\\src\\cat_breeds"):
+            if filename.endswith(".png"):
                 print("Card name: " + filename)
-                card, create = MemoCard.objects.get_or_create(name__iexact=filename.rstrip(".jpg"), theme="Dogs")
+                card, create = MemoCard.objects.get_or_create(name__iexact=filename.rstrip(".png"), theme="Cats")
                 if create:
                     print("Create")
                 # else:
@@ -18,10 +18,10 @@ class Command(BaseCommand):
                 #     print("Update")
                 # card.theme = 'Dogs'
 
-                name = filename.rstrip('.jpg')
+                name = filename.rstrip('.png')
                 if '_' in filename:
                     name = name.replace('_', ' ')
-                card.path = "../../static/src/dog_breeds/" + filename
+                card.path = "../../static/src/cat_breeds/" + filename
                 card.name = name
 
                 card.save()

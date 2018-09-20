@@ -17,5 +17,5 @@ def start_site(request):
 #     random.shuffle(cards)
 #     cards_in_row = [[card for card in cards[i:i+4]] for i in range(0, len(cards), 4)]
 #
-#     return render(request, 'game/dogs_deck.html', {'cards': cards_in_row})
+#     return render(request, 'game/game.html', {'cards': cards_in_row})
 

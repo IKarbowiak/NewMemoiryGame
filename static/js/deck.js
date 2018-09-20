@@ -3,11 +3,12 @@
 
     angular.module('memo')
         .controller('flipCtrl', ['$scope', '$http', '$interval', function($scope, $http, $interval){
-            const theme_name = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.document.URL.length);
-            console.log(theme_name)
+            const choosen_option = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.document.URL.length);
+            $scope.theme_name = choosen_option.split('&')[0].split('=')[1]
+            console.log(choosen_option);
 
 
-            $http.get(`/api/decks/${theme_name}`).then(function(response){
+            $http.get(`/api/decks/${choosen_option}`).then(function(response){
                 $scope.cards = [];
                 let row = [];
                 let data_with_cards = [].concat(response.data, response.data);

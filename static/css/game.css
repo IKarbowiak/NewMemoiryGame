@@ -59,10 +59,13 @@ h1, h2, h3, h4 {
 }
 
 .panel {
-    padding-top: 10px;
-    vertical-align: middle;
-    margin-left: 2%;
-    margin-top: 2%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 1%;
+    /*padding-top: 10px;*/
+    /*vertical-align: middle;*/
+    /*margin-left: 2%;*/
+    /*margin-top: 2%;*/
     /*padding-right: 45%;*/
 }
 
@@ -74,9 +77,9 @@ h1, h2, h3, h4 {
 }
 
 .card-img-top {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
 }
 
 .breed {
@@ -92,14 +95,11 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 
-.deck {
-    width: 100%;
-}
-
 .guess {
     padding-top: 15px;
     text-align: center;
-
+    float: left;
+    width: 10%;
 }
 
 
@@ -142,4 +142,3 @@ h1, h2, h3, h4 {
     color: black;
 }
 */
-© 2018 GitHub, Inc.

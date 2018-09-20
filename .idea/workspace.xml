@@ -3,29 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="deb1d3aa-ad17-46bf-b9f1-11f0f8da6c13" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/api/game/serializers.py" afterPath="$PROJECT_DIR$/api/game/serializers.py" />
+      <change beforePath="$PROJECT_DIR$/game/management/commands/create_memory_cards.py" afterPath="$PROJECT_DIR$/game/management/commands/create_memory_cards.py" />
+      <change beforePath="$PROJECT_DIR$/game/urls.py" afterPath="$PROJECT_DIR$/game/urls.py" />
+      <change beforePath="$PROJECT_DIR$/game/views.py" afterPath="$PROJECT_DIR$/game/views.py" />
       <change beforePath="$PROJECT_DIR$/static/css/game.css" afterPath="$PROJECT_DIR$/static/css/game.css" />
-      <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Akita.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Akita.jpg" />
+      <change beforePath="$PROJECT_DIR$/static/js/deck.js" afterPath="$PROJECT_DIR$/static/js/deck.js" />
       <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Alaskan.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Alaskan.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Appenzeller.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Appenzeller.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Australian_Terrier.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Australian_Terrier.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Basenji.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Basenji.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Beagle.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Beagle.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Bearded.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Bearded.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Bernese.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Bernese.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Border_Collie.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Border_Collie.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Boxer.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Boxer.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Chinese_Crested.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Chinese_Crested.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Chinese_Shar_Pei.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Chinese_Shar_Pei.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Chow_Chow.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Chow_Chow.jpg" />
       <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Dalmatian.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Dalmatian.jpg" />
       <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/German_Spitz.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/German_Spitz.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Labrador_Retriver.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Labrador_Retriver.jpg" />
       <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Rat_Terrier.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Rat_Terrier.jpg" />
       <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Russian_Toy.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Russian_Toy.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/src/dog_breeds/Weimaraner.jpg" afterPath="$PROJECT_DIR$/static/src/dog_breeds/Weimaraner.jpg" />
-      <change beforePath="$PROJECT_DIR$/templates/game/base.html" afterPath="$PROJECT_DIR$/templates/game/base.html" />
-      <change beforePath="$PROJECT_DIR$/templates/game/dogs_deck.html" afterPath="$PROJECT_DIR$/templates/game/dogs_deck.html" />
+      <change beforePath="$PROJECT_DIR$/templates/game/dogs_deck.html" afterPath="$PROJECT_DIR$/templates/game/game.html" />
+      <change beforePath="$PROJECT_DIR$/templates/game/start_site.html" afterPath="$PROJECT_DIR$/templates/game/start_site.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,8 +31,8 @@
       <file leaf-file-name="deck.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/deck.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="28" column="15" lean-forward="false" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+            <state relative-caret-position="126">
+              <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -59,21 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="game.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/game.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="77" column="15" lean-forward="false" selection-start-line="77" selection-start-column="15" selection-end-line="77" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/game/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="427">
+              <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -91,21 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dogs_deck.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/game/dogs_deck.html">
+      <file leaf-file-name="game.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/game/game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="42" lean-forward="false" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+            <state relative-caret-position="126">
+              <caret line="6" column="59" lean-forward="false" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -114,24 +83,21 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/themes/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="462">
               <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
-                <marker date="1537284569628" expanded="true" signature="0:27" ph="import ..." />
                 <marker date="1537284569628" expanded="true" signature="806:828" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/game/serializers.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="168">
+              <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -139,8 +105,8 @@
       <file leaf-file-name="create_memory_cards.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game/management/commands/create_memory_cards.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="8" column="122" lean-forward="false" selection-start-line="8" selection-start-column="122" selection-end-line="8" selection-end-column="122" />
+            <state relative-caret-position="441">
+              <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -170,6 +136,7 @@
       <find>conso</find>
       <find>CardDeckSerializer</find>
       <find>panel</find>
+      <find>deck</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -209,12 +176,9 @@
         <option value="$PROJECT_DIR$/memorygame/settings.py" />
         <option value="$PROJECT_DIR$/memorygame/urls.py" />
         <option value="$PROJECT_DIR$/templates/game/start_site.html" />
-        <option value="$PROJECT_DIR$/game/urls.py" />
         <option value="$PROJECT_DIR$/templates/game/modalWindow.html" />
         <option value="$PROJECT_DIR$/static/js/script.js" />
-        <option value="$PROJECT_DIR$/game/management/commands/create_memory_cards.py" />
         <option value="$PROJECT_DIR$/game/management/commands/create_decks_with_cards.py" />
-        <option value="$PROJECT_DIR$/static/js/deck.js" />
         <option value="$PROJECT_DIR$/api/game/serializers.py" />
         <option value="$PROJECT_DIR$/api/urls.py" />
         <option value="$PROJECT_DIR$/api/themes/serializers.py" />
@@ -222,7 +186,11 @@
         <option value="$PROJECT_DIR$/api/game/views.py" />
         <option value="$PROJECT_DIR$/templates/game/base.html" />
         <option value="$PROJECT_DIR$/templates/game/dogs_deck.html" />
+        <option value="$PROJECT_DIR$/game/management/commands/create_memory_cards.py" />
+        <option value="$PROJECT_DIR$/game/urls.py" />
+        <option value="$PROJECT_DIR$/static/js/deck.js" />
         <option value="$PROJECT_DIR$/static/css/game.css" />
+        <option value="$PROJECT_DIR$/templates/game/game.html" />
       </list>
     </option>
   </component>
@@ -232,8 +200,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="520" />
+    <option name="y" value="7" />
     <option name="width" value="976" />
     <option name="height" value="1038" />
   </component>
@@ -253,9 +222,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -267,18 +236,6 @@
               <item name="MemoryGame_git" type="b2602c69:ProjectViewProjectNode" />
               <item name="MemoryGame_git" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MemoryGame_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MemoryGame_git" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MemoryGame_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MemoryGame_git" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MemoryGame_git" type="b2602c69:ProjectViewProjectNode" />
@@ -325,7 +282,7 @@
               <item name="MemoryGame_git" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dog_breeds" type="462c0819:PsiDirectoryNode" />
+              <item name="cat_breeds" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MemoryGame_git" type="b2602c69:ProjectViewProjectNode" />
@@ -342,7 +299,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -431,15 +388,16 @@
       <workItem from="1537091746198" duration="1135000" />
       <workItem from="1537092907507" duration="8921000" />
       <workItem from="1537193296937" duration="9653000" />
-      <workItem from="1537284612976" duration="6243000" />
+      <workItem from="1537284612976" duration="6638000" />
+      <workItem from="1537452651352" duration="3848000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43335000" />
+    <option name="totallyTimeSpent" value="47578000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -454,9 +412,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24274974" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24650913" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -561,13 +519,6 @@
       </provider>
     </entry>
     <entry file="file://F:/mg/templates/game/start_site.html" />
-    <entry file="file://$PROJECT_DIR$/game/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/deck.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -593,25 +544,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/game/start_site.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -626,23 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/management/commands/create_memory_cards.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="122" lean-forward="false" selection-start-line="8" selection-start-column="122" selection-end-line="8" selection-end-column="122" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/deck.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="28" column="15" lean-forward="false" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -663,25 +582,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/themes/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <marker date="1537284569628" expanded="true" signature="0:27" ph="import ..." />
-            <marker date="1537284569628" expanded="true" signature="806:828" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/themes/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/api/themes/serializers.py" />
     <entry file="file://$PROJECT_DIR$/static/src/dog_breeds/Weimaraner.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -715,18 +616,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/game/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/game/dogs_deck.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -741,6 +644,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/game/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/deck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/themes/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <marker date="1537284569628" expanded="true" signature="806:828" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/management/commands/create_memory_cards.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/game/start_site.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/game/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -751,8 +696,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/game.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="77" column="15" lean-forward="false" selection-start-line="77" selection-start-column="15" selection-end-line="77" selection-end-column="15" />
+        <state relative-caret-position="427">
+          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/game/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="59" lean-forward="false" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
           <folding />
         </state>
       </provider>

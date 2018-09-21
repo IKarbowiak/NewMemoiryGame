@@ -2,14 +2,23 @@
 
 {% block content %}
 {% verbatim %}
-    <div>
+    <div class="welcome">
         <h2>Welcome in Memory Game</h2>
-        <h2>Please choose theme of your game to start play!</h2>
+        <h2>Please choose theme of your game and numbers of card to guess and play!</h2>
     </div>
     <br>
-    <div class="decks" ng-controller="themeCtrl">
-        <div ng-repeat="theme in themes">
-            <h3><a href="game.html?theme={{theme}}&size=10" ng-click="choose_theme(theme)">{{theme}}</a><br></h3>
+    <div ng-controller="themeCtrl">
+        <div class="themes">
+            <div ng-repeat="theme in themes">
+                <div class="shadow-sm p-1 mb-3 bg-white rounded float-left theme">
+                    <h3>{{theme}}</h3>
+                </div>
+                <div class="size">
+                    <a class="badge badge-warning" href="game.html?theme={{theme}}&size=10">10</a>
+                    <a class="badge badge-warning" href="game.html?theme={{theme}}&size=16">16</a>
+                    <a class="badge badge-warning" href="game.html?theme={{theme}}&size=20">20</a>
+                </div>
+            </div>
         </div>
     </div>
 {% endverbatim %}

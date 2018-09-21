@@ -3,11 +3,7 @@
 
     <!--<script type="text/javascript" src="/static/js/deck.js"></script>-->
 {% verbatim %}
-    <div ng-controller="flipCtrl">
-        <div class="list-group-item list-group-item-warning guess">
-            Guesses: {{guesses}}
-            Time: {{time | date: 'm:ss'}}
-        </div>
+    <div ng-controller="flipCtrl" class="main">
         <div class="deck">
             <table class="panel">
                 <tbody>
@@ -15,7 +11,7 @@
                     <div class="flip">
                         <td ng-repeat="card in row track by $index">
                             <div class="card text-center" ng-click="flipCard(card)">
-                                <div class="card-body">
+                                <div class="card-body mycardbody">
                                     <div class="face" ng-if="card.isFlipped">
                                         <img class="card-img-top" ng-src={{card.path}}>
                                         <p ng-if="card.isGuessed" class="card-text breed">{{ card.name }}</p>
@@ -31,6 +27,11 @@
                 </tbody>
 
             </table>
+        </div>
+
+        <div class="shadow-sm p-1 mb-3 bg-white rounded guess">
+            <span class="boldtext">Guesses:</span> {{guesses}}
+            <span class="boldtext">Time:</span> {{time | date: 'm:ss'}}
         </div>
 
         <div class="modal" tabindex="-1" role="dialog" id="myModal">

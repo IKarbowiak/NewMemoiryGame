@@ -120,6 +120,22 @@ h2, h3 {
 
 }
 
+.high-score {
+    float: left;
+    width: 46%;
+    margin: 3% 2%
+}
+
+.tab-content{
+    background-color: #e4e4e4 !important;
+}
+
+.nav-item {
+    background-color: #e4e4e4;
+    color: #e67300;
+}
+
+
 .boldtext {
     font-weight: bold;
 }

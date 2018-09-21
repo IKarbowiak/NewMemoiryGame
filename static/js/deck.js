@@ -5,6 +5,7 @@
         .controller('flipCtrl', ['$scope', '$http', '$interval', function($scope, $http, $interval){
             const choosen_option = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.document.URL.length);
             $scope.theme_name = choosen_option.split('&')[0].split('=')[1]
+            const size = choosen_option.split('=')[2] * 2
             console.log(choosen_option);
 
 
@@ -19,7 +20,7 @@
                 for (let card of data_with_cards) {
                     let new_card = { id: count, path: card.path, name: card.name, isFlipped: false };
                     row.push(new_card);
-                    if (row.length === 5){
+                    if (row.length === (size/4)){
                         $scope.cards.push(row);
                         row = []
                     }

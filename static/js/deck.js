@@ -70,7 +70,7 @@
 //                let deck_cards = $scope.cards.flat();
                 let deck_cards = $scope.cards.reduce(function(a, b) {
                     return a.concat(b);
-                })
+                });
                 if (!(deck_cards.some(check))) {
                     $scope.end = true;
                     stop_game();
@@ -88,23 +88,24 @@
                     $interval.cancel(timer);
                     timer = undefined;
 
-
                 }
-            }
+            };
 
             const data = {
                 'name': 'hihihi',
                 'date': new Date(),
                 'time': 23444,
                 'score': 33
-            }
+            };
 
+            $scope.click = function() {
+                $http.post('/api/game/', data).then(function successCallback(response){
+                    console.log("Successfully POST-ed data");
+                }, function errorCallback(response){
+                    console.log("POST-ing of data failed");
+                });
+            };
 
-            $http.post('api/game', data).then(function successCallback(response){
-                console.log("Successfully POST-ed data");
-            }, function errorCallback(response){
-                console.log("POST-ing of data failed");
-            });
 
         }])
 

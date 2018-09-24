@@ -30,8 +30,10 @@ class CardList(generics.ListCreateAPIView):
 
 class GameViewSet(viewsets.ModelViewSet):
 
+    queryset = Game.objects.all()
+
     def create(self, request):
-        print("Game request: " + request.data)
+        print("Game request: ", request.data)
         try:
             Game.objects.create(player=request.data['name'], date=request.data['date'], time=request.data['time'],
                                 guesses=request.data['score'])

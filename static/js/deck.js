@@ -92,6 +92,20 @@
                 }
             }
 
+            const data = {
+                'name': 'hihihi',
+                'date': new Date(),
+                'time': 23444,
+                'score': 33
+            }
+
+
+            $http.post('api/game', data).then(function successCallback(response){
+                console.log("Successfully POST-ed data");
+            }, function errorCallback(response){
+                console.log("POST-ing of data failed");
+            });
+
         }])
 
 })();

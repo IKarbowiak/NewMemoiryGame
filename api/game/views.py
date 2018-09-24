@@ -1,6 +1,8 @@
 from rest_framework import generics
 from .serializers import CardDeckSerializer
-from game.models import Deck, MemoCard
+from game.models import MemoCard, Game
+from rest_framework import viewsets
+from rest_framework.response import Response
 import random
 
 
@@ -11,8 +13,7 @@ class CardList(generics.ListCreateAPIView):
     serializer_class = CardDeckSerializer
 
     def get_queryset(self):
-        # queryset = Deck.objects.order_by('?').all()     # random order
-        queryset = MemoCard.objects.all().order_by('?')
+        queryset = MemoCard.objects.all().order_by('?')     # random order
 
         theme = self.request.query_params.get('theme', '')
         size = self.request.query_params.get('size', '10')
@@ -26,4 +27,18 @@ class CardList(generics.ListCreateAPIView):
         """ Save the post data when creating a new memocard. """
         serializer.save()
 
+
+class GameViewSet(viewsets.ModelViewSet):
+
+    def create(self, request):
+        print("Game request: " + request.data)
+        try:
+            Game.objects.create(player=request.data['name'], date=request.data['date'], time=request.data['time'],
+                                guesses=request.data['score'])
+
+            return Response(status=201)
+
+        except Exception as e:
+            print(e)
+            return Response(status=400)
 

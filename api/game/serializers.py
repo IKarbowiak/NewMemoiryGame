@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from game.models import Deck, MemoCard
+from game.models import MemoCard, Game
 
 
 class CardDeckSerializer(serializers.ModelSerializer):
@@ -10,4 +10,7 @@ class CardDeckSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'path', 'theme')
 
 
-
+class GameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Game
+        fields = ('player', 'date', 'cards_number', 'time', 'guesses')

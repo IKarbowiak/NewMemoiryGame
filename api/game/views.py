@@ -1,5 +1,5 @@
 from rest_framework import generics
-from .serializers import CardDeckSerializer
+from .serializers import CardDeckSerializer, GameSerializer
 from game.models import MemoCard, Game
 from rest_framework import viewsets
 from rest_framework.response import Response
@@ -30,13 +30,17 @@ class CardList(generics.ListCreateAPIView):
 
 class GameViewSet(viewsets.ModelViewSet):
 
-    queryset = Game.objects.all()
+    def list(self, request):
+        queryset = Game.objects.all()
+        serializer = GameSerializer(queryset, many=True)
+        return Response(serializer.data)
 
     def create(self, request):
         print("Game request: ", request.data)
         try:
-            Game.objects.create(player=request.data['name'], date=request.data['date'], time=request.data['time'],
-                                guesses=request.data['score'])
+            Game.objects.create(player=request.data['name'], date=request.data['date'],
+                                cards_number=request.data['size'], game_theme=request.data['theme'],
+                                time=request.data['time'], guesses=request.data['score'])
 
             return Response(status=201)
 

@@ -91,7 +91,7 @@
                 }
             };
 
-            $scope.showAlert = false
+            $scope.showAlert = false;
 
             $scope.save = function() {
                 if ($scope.name) {
@@ -101,8 +101,8 @@
                         'time': $scope.time,
                         'score': $scope.guesses,
                         'size': size,
-                        'theme': $scope.theme_name,
-                    }
+                        'theme': $scope.theme_name
+                    };
                     $http.post('/api/game/', data).then(function successCallback(response){
                         console.log(response);
                     }, function errorCallback(response){
@@ -113,7 +113,6 @@
                 }
                 else {
                     $scope.showAlert = true;
-
 
                 }
 

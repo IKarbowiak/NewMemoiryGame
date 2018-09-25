@@ -5,7 +5,7 @@
         .controller('flipCtrl', ['$scope', '$http', '$interval', function($scope, $http, $interval){
             const choosen_option = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.document.URL.length);
             $scope.theme_name = choosen_option.split('&')[0].split('=')[1]
-            const size = choosen_option.split('=')[2] * 2
+            const size = choosen_option.split('=')[2]
             console.log(choosen_option);
 
 
@@ -20,7 +20,7 @@
                 for (let card of data_with_cards) {
                     let new_card = { id: count, path: card.path, name: card.name, isFlipped: false };
                     row.push(new_card);
-                    if (row.length === (size/4)){
+                    if (row.length === (size*2/4)){
                         $scope.cards.push(row);
                         row = []
                     }
@@ -91,19 +91,33 @@
                 }
             };
 
-            const data = {
-                'name': 'hihihi',
-                'date': new Date(),
-                'time': 23444,
-                'score': 33
-            };
+            $scope.showAlert = false
 
-            $scope.click = function() {
-                $http.post('/api/game/', data).then(function successCallback(response){
-                    console.log("Successfully POST-ed data");
-                }, function errorCallback(response){
-                    console.log("POST-ing of data failed");
-                });
+            $scope.save = function() {
+                if ($scope.name) {
+                    const data = {
+                        'name': $scope.name,
+                        'date': new Date(),
+                        'time': $scope.time,
+                        'score': $scope.guesses,
+                        'size': size,
+                        'theme': $scope.theme_name,
+                    }
+                    $http.post('/api/game/', data).then(function successCallback(response){
+                        console.log(response);
+                    }, function errorCallback(response){
+                        console.log(response);
+                    });
+                    $('#myModal').modal('hide')
+
+                }
+                else {
+                    $scope.showAlert = true;
+
+
+                }
+
+
             };
 
 

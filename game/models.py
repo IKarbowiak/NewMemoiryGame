@@ -4,6 +4,8 @@ from django.db import models
 class Game(models.Model):
     player = models.CharField(max_length=100, default='Unknown')
     date = models.DateField(auto_now_add=True)
+    game_theme = models.CharField(max_length=100)
+    cards_number = models.IntegerField(default=0)
     time = models.IntegerField(default=0)
     guesses = models.IntegerField(default=0)
 

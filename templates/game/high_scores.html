@@ -7,149 +7,99 @@
         <h2>Best of the best!</h2>
     </div>
     <div class="scoreNavs">
-    <div ng-repeat="(index, theme) in themes">
-        <div class="high-score">
+        <div ng-repeat="(index, theme) in themes">
+            <div class="high-score">
+                <h2 class="scoreThemes">{{ theme }}</h2><br>
+                 <nav>
+                    <div class="nav nav-tabs" id="nav-tab{{ index }}" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-10-tab{{ index }}" data-toggle="tab" href="#nav-10c{{ index }}" role="tab" aria-controls="nav-10c{{ index }}" aria-selected="true">10 cards</a>
+                        <a class="nav-item nav-link" id="nav-16-tab{{ index }}" data-toggle="tab" href="#nav-16c{{ index }}" role="tab" aria-controls="nav-16c{{ index }}" aria-selected="false">16 cards</a>
+                        <a class="nav-item nav-link" id="nav-20-tab{{ index }}" data-toggle="tab" href="#nav-20c{{ index }}" role="tab" aria-controls="nav-contact20c{{ index }}" aria-selected="false">20 cards</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-10c{{ index }}" role="tabpanel" aria-labelledby="nav-10-tab{{ index }}" >
+                        <table class="table table-sm table-hover table-bordered">
+                            <thead class="tableHead">
+                                <tr>
+                                    <th scope="col" class="colhead">#</th>
+                                    <th scope="col" class="colhead">Player</th>
+                                    <th scope="col" class="colhead">Time [m:s]</th>
+                                    <th scope="col" class="colhead">Guesses</th>
+                                    <th scope="col" class="colhead">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-if="scores[theme+10].length == 0">
+                                    <th colspan="5" class="empty">No results</th>
+                                </tr>
+                                <tr ng-repeat="(index, game) in scores[theme+10]">
+                                    <th>{{ index + 1 }}</th>
+                                    <th>{{ game.player }}</th>
+                                    <th>{{ game.time | date: 'm:ss' }}</th>
+                                    <th>{{ game.guesses }}</th>
+                                    <th>{{ game.date }}</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="nav-16c{{ index }}" role="tabpanel" aria-labelledby="nav-16-tab{{ index }}">
+                        <table class="table table-sm table-hover table-bordered">
+                            <thead class="tableHead">
+                                <tr>
+                                    <th scope="col" class="colhead">#</th>
+                                    <th scope="col" class="colhead">Player</th>
+                                    <th scope="col" class="colhead">Time [min:s]</th>
+                                    <th scope="col" class="colhead">Guesses</th>
+                                    <th scope="col" class="colhead">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-if="scores[theme+16].length == 0">
+                                    <th colspan="5" class="empty">No results</th>
+                                </tr>
+                                <tr ng-repeat="(index, game) in scores[theme+16]">
+                                    <th>{{ index + 1 }}</th>
+                                    <th>{{ game.player }}</th>
+                                    <th>{{ game.time | date: 'm:ss' }}</th>
+                                    <th>{{ game.guesses }}</th>
+                                    <th>{{ game.date }}</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="nav-20c{{ index }}" role="tabpanel" aria-labelledby="nav-20-tab{{ index }}">
+                        <table class="table table-sm table-hover table-bordered">
+                            <thead class="tableHead">
+                                <tr>
+                                    <th scope="col" class="colhead">#</th>
+                                    <th scope="col" class="colhead">Player</th>
+                                    <th scope="col" class="colhead">Time [min:s]</th>
+                                    <th scope="col" class="colhead">Guesses</th>
+                                    <th scope="col" class="colhead">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-if="scores[theme+20].length == 0">
+                                    <th colspan="5" class="empty">No results</th>
+                                </tr>
+                                <tr ng-repeat="(index, game) in scores[theme+20]">
+                                    <th>{{ index + 1 }}</th>
+                                    <th>{{ game.player }}</th>
+                                    <th>{{ game.time | date: 'm:ss' }}</th>
+                                    <th>{{ game.guesses }}</th>
+                                    <th>{{ game.date }}</th>
+                                </tr>
+                            </tbody>
+                        </table>
 
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab{{ index }}" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-10-tab{{ index }}" data-toggle="tab" href="#nav-10c{{ index }}" role="tab" aria-controls="nav-10c{{ index }}" aria-selected="true">10 cards</a>
-                    <a class="nav-item nav-link" id="nav-16-tab{{ index }}" data-toggle="tab" href="#nav-16c{{ index }}" role="tab" aria-controls="nav-16c{{ index }}" aria-selected="false">16 cards</a>
-                    <a class="nav-item nav-link" id="nav-20-tab{{ index }}" data-toggle="tab" href="#nav-20c{{ index }}" role="tab" aria-controls="nav-contact20c{{ index }}" aria-selected="false">25 cards</a>
+                    </div>
                 </div>
-            </nav>
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-10c{{ index }}" role="tabpanel" aria-labelledby="nav-10-tab{{ index }}">
-                    <table class="table table-sm table-hover table-bordered">
-                        <thead class="tableHead">
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Player</th>
-                                <th scope="col">Time</th>
-                                <th scope="col">Guesses</th>
-                                <th scope="col">Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="tab-pane fade" id="nav-16c{{ index }}" role="tabpanel" aria-labelledby="nav-16-tab{{ index }}">b{{ index }}</div>
-                <div class="tab-pane fade" id="nav-20c{{ index }}" role="tabpanel" aria-labelledby="nav-20-tab{{ index }}">c{{ index }}</div>
             </div>
         </div>
 
-        <!--<div ng-repeat="(index, theme) in themes">-->
-            <!--<div class="high-score">-->
-                <!--<nav>-->
-                    <!--<div class="nav nav-tabs" id="nav-tab" role="tablist">-->
-                        <!--<a class="nav-item nav-link active" id="nav-home-tab{{index}}" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">10 cards</a>-->
-                        <!--<a class="nav-item nav-link" id="nav-profile-tab{{index}}" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">16 cards</a>-->
-                        <!--<a class="nav-item nav-link" id="nav-contact-tab{{index}}" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">20 cards</a>-->
-                    <!--</div>-->
-                <!--</nav>-->
-                <!--<div class="tab-content" id="nav-tabContent">-->
-                    <!--<div class="tab-pane fade show active" id="nav-home{{index}}" role="tabpanel" aria-labelledby="nav-home-tab">-->
-                        <!--<table class="table table-sm table-hover table-bordered">-->
-                              <!--<thead class="tableHead">-->
-                                <!--<tr>-->
-                                  <!--<th scope="col">#</th>-->
-                                  <!--<th scope="col">First</th>-->
-                                  <!--<th scope="col">Last</th>-->
-                                  <!--<th scope="col">Handle</th>-->
-                                <!--</tr>-->
-                              <!--</thead>-->
-                              <!--<tbody>-->
-                                <!--<tr>-->
-                                  <!--<th scope="row">1</th>-->
-                                  <!--<td>Mark</td>-->
-                                  <!--<td>Otto</td>-->
-                                  <!--<td>@mdo</td>-->
-                                <!--</tr>-->
-                                <!--<tr>-->
-                                  <!--<th scope="row">2</th>-->
-                                  <!--<td>Jacob</td>-->
-                                  <!--<td>Thornton</td>-->
-                                  <!--<td>@fat</td>-->
-                                <!--</tr>-->
-                                <!--<tr>-->
-                                  <!--<th scope="row">3</th>-->
-                                  <!--<td colspan="2">Larry the Bird</td>-->
-                                  <!--<td>@twitter</td>-->
-                                <!--</tr>-->
-                              <!--</tbody>-->
-                        <!--</table>-->
-
-                    <!--</div>-->
-                    <!--<div class="tab-pane fade" id="nav-profile{{index}}" role="tabpanel" aria-labelledby="nav-profile-tab">-->
-                        <!--<table class="table table-sm table-hover table-bordered">-->
-                              <!--<thead class="tableHead">-->
-                                <!--<tr>-->
-                                  <!--<th scope="col">#</th>-->
-                                  <!--<th scope="col">First</th>-->
-                                  <!--<th scope="col">Last</th>-->
-                                  <!--<th scope="col">Handle</th>-->
-                                <!--</tr>-->
-                              <!--</thead>-->
-                              <!--<tbody>-->
-                                <!--<tr>-->
-                                  <!--<th scope="row">1</th>-->
-                                  <!--<td>Mark</td>-->
-                                  <!--<td>Otto</td>-->
-                                  <!--<td>@mdo</td>-->
-                                <!--</tr>-->
-                                <!--<tr>-->
-                                  <!--<th scope="row">2</th>-->
-                                  <!--<td>Jacob</td>-->
-                                  <!--<td>Thornton</td>-->
-                                  <!--<td>@fat</td>-->
-                                <!--</tr>-->
-                                <!--<tr>-->
-                                  <!--<th scope="row">3</th>-->
-                                  <!--<td colspan="2">Larry the Bird</td>-->
-                                  <!--<td>@twitter</td>-->
-                                <!--</tr>-->
-                              <!--</tbody>-->
-                        <!--</table>-->
-                    <!--</div>-->
-                    <!--<div class="tab-pane fade" id="nav-contact{{index}}" role="tabpanel" aria-labelledby="nav-contact-tab">-->
-                        <!--<table class="table table-sm table-hover table-bordered">-->
-                              <!--<thead class="tableHead">-->
-                                <!--<tr>-->
-                                  <!--<th scope="col">#</th>-->
-                                  <!--<th scope="col">First</th>-->
-                                  <!--<th scope="col">Last</th>-->
-                                  <!--<th scope="col">Handle</th>-->
-                                <!--</tr>-->
-                              <!--</thead>-->
-                              <!--<tbody>-->
-                                <!--<tr>-->
-                                  <!--<th scope="row">1</th>-->
-                                  <!--<td>Mark</td>-->
-                                  <!--<td>Otto</td>-->
-                                  <!--<td>@mdo</td>-->
-                                <!--</tr>-->
-                                <!--<tr>-->
-                                  <!--<th scope="row">2</th>-->
-                                  <!--<td>Jacob</td>-->
-                                  <!--<td>Thornton</td>-->
-                                  <!--<td>@fat</td>-->
-                                <!--</tr>-->
-                                <!--<tr>-->
-                                  <!--<th scope="row">3</th>-->
-                                  <!--<td >Larry</td>-->
-                                  <!--<td>Bird</td>-->
-                                  <!--<td>@twitter</td>-->
-                                <!--</tr>-->
-                              <!--</tbody>-->
-                        <!--</table>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
-
+    </div>
+</div>
 
 {% endverbatim %}
 

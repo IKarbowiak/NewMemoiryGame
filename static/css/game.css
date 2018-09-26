@@ -145,6 +145,7 @@ h2, h3 {
 
 .nav-item, .nav-item:hover {
     color: #e67300;
+    font-weight: bold;
 }
 
 
@@ -175,3 +176,20 @@ h2, h3 {
 
 }
 
+.colhead {
+    font-weight: bold;
+}
+
+th {
+    font-weight: normal;
+}
+
+.empty {
+    text-align: center;
+    font-weight: bold;
+}
+
+.scoreThemes {
+    margin: auto;
+    text-align: center;
+}

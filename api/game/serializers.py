@@ -13,4 +13,4 @@ class CardDeckSerializer(serializers.ModelSerializer):
 class GameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Game
-        fields = ('player', 'date', 'cards_number', 'time', 'guesses')
+        fields = ('player', 'date', 'cards_number', 'time', 'guesses', 'game_theme')

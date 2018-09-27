@@ -30,10 +30,20 @@
             </table>
         </div>
 
-        <div class="shadow-sm p-1 mb-3 bg-white rounded guess">
-            <span class="boldtext">Guesses:</span> {{guesses}}
-            <span class="boldtext">Time:</span> {{time | date: 'm:ss'}}
+        <div class="endButton-l">
+            <button class="btn btn-outline-secondary">Back to menu</button>
         </div>
+        <div class="endButton-r">
+            <button class="btn btn-outline-secondary">High Scores</button>
+        </div>
+        <div>
+            <div class="shadow-sm p-1 mb-3 bg-white rounded guess">
+                <span class="boldtext">Guesses:</span> {{guesses}}
+                <span class="boldtext">Time:</span> {{time | date: 'm:ss'}}
+            </div>
+        </div>
+
+
 
         <div class="modal" tabindex="-1" role="dialog" id="myModal">
           <div class="modal-dialog" role="document">

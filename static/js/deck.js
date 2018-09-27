@@ -33,7 +33,9 @@
             $scope.guesses = 0;
             $scope.time = 0;
             $scope.end = false;
+
             $scope.flipCard = card => {
+                // open_modal()
                 if (!card.isFlipped && flipped_cards.length < 2){
                     if (!start_game) {
                         start_game = true;
@@ -65,7 +67,6 @@
                 }
 
             }
-
             check_for_end = function () {
 //                let deck_cards = $scope.cards.flat();
                 let deck_cards = $scope.cards.reduce(function(a, b) {
@@ -75,22 +76,21 @@
                     $scope.end = true;
                     stop_game();
                     $('#myModal').modal('show')
-                    // open_modal()
                 }
-            };
 
+            };
             check = function(deck_card){
                 return deck_card.isFlipped === false;
-            };
 
+            };
             stop_game = function(){
                 if (angular.isDefined(timer)){
                     $interval.cancel(timer);
+
                     timer = undefined;
-
                 }
-            };
 
+            };
             $scope.showAlert = false;
 
             $scope.save = function() {

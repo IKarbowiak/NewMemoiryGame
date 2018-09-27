@@ -115,14 +115,28 @@ h2, h3 {
 
 .guess {
    /* float: left; */
-    display: inline-block
-    width: 10%;
+    width: 20%;
     margin-left: 40%;
     margin-right: 40%;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
     margin-top: 1%;
     background-color: #ffb653 !important;
 
+}
+
+.endButton-l, .endButton-r {
+    margin-top: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.endButton-l {
+    float: left;
+    position: absolute;
+}
+
+.endButton-r {
+    float: right;
 }
 
 .high-score {

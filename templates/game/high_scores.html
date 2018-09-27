@@ -55,27 +55,27 @@
                             <div class="force-overflow">
                                 <table class="table table-sm table-hover table-bordered">
                                     <thead class="tableHead">
-                                        <tr>
-                                            <th class="colhead">#</th>
-                                            <th class="colhead playerHead">Player</th>
-                                            <th class="colhead">Time [m:s]</th>
-                                            <th class="colhead">Guesses</th>
-                                            <th class="colhead">Date</th>
-                                        </tr>
+                                    <tr>
+                                        <th scope="col" class="colhead" style="width:8%">#</th>
+                                        <th scope="col" class="colhead" style="width: 30%">Player</th>
+                                        <th scope="col" class="colhead" style="width: 19%">Time</th>
+                                        <th scope="col" class="colhead" style="width: 18%">Guesses</th>
+                                        <th scope="col" class="colhead" style="width: 25%">Date</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
-                                        <tr ng-if="scores[theme+16].length == 0">
-                                            <td colspan="5" class="empty">No results</td>
-                                        </tr>
-                                        <tr ng-repeat="(index, game) in scores[theme+16]">
-                                            <td>{{ index + 1 }}</td>
-                                            <td class="player">{{ game.player }}</td>
-                                            <td>{{ game.time | date: 'm:ss' }}</td>
-                                            <td>{{ game.guesses }}</td>
-                                            <td>{{ game.date }}</td>
-                                        </tr>
-                                    </tbody>
+                                    <tr ng-if="scores[theme+16].length == 0">
+                                        <td colspan="5" class="empty">No results</td>
+                                    </tr>
+                                    <tr ng-repeat="(index, game) in scores[theme+16]" >
+                                        <th scope="row">{{ index + 1 }}</th>
+                                        <td>{{ game.player }}</td>
+                                        <td>{{ game.time | date: 'm:ss' }}</td>
+                                        <td>{{ game.guesses }}</td>
+                                        <td>{{ game.date }}</td>
+                                    </tr>
 
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -83,46 +83,30 @@
                     <div class="tab-pane fade" id="nav-20c{{ index }}" role="tabpanel" aria-labelledby="nav-20-tab{{ index }}">
                         <div class="scrollbar scrollbar-warning">
                             <div class="force-overflow">
-                            <table class="table table-bordered table-sm table-hover" ng-hide="dataSource.isLoading || dataSource.error" >
-                                <thead>
-                                    <tr class="row" style="margin: auto">
-                                        <th class="text-center col-lg-1">
-                                            #
-                                        </th>
-                                        <th class="text-center col-lg-4">
-                                            Player
-                                        </th>
-                                        <th class="text-center col-lg-2">
-                                            Time
-                                        </th>
-                                        <th class="text-center col-lg-2">
-                                            Guesses
-                                        </th>
-                                        <th class="text-center col-lg-3">
-                                            Date
-                                        </th>
+                                <table class="table table-sm table-hover table-bordered">
+                                    <thead class="tableHead">
+                                    <tr>
+                                        <th scope="col" class="colhead" style="width:8%">#</th>
+                                        <th scope="col" class="colhead" style="width: 30%">Player</th>
+                                        <th scope="col" class="colhead" style="width: 19%">Time</th>
+                                        <th scope="col" class="colhead" style="width: 18%">Guesses</th>
+                                        <th scope="col" class="colhead" style="width: 25%">Date</th>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="row">
-                                        <td >Berjfewiu</td>
-                                        <td >edlksfero</td>
-                                        <td >ekriu4toi</td>
-                                        <td >dfjwaeutt</td>
-                                        <td >ewireoi</td>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-if="scores[theme+20].length == 0">
+                                        <td colspan="5" class="empty">No results</td>
                                     </tr>
-                                    <!--<tr ng-if="scores[theme+16].length == 0">-->
-                                        <!--<td colspan="5" class="empty">No results</td>-->
-                                    <!--</tr>-->
-                                    <!--<tr class="row" ng-repeat="(index, game) in scores[theme+16]" style="margin: auto">-->
-                                        <!--<td>{{ index + 1 }}</td>-->
-                                        <!--<td style="text-overflow: ellipsis;overflow: hidden;">{{ game.player }}</td>-->
-                                        <!--<td>{{ game.time | date: 'm:ss' }}</td>-->
-                                        <!--<td>{{ game.guesses }}</td>-->
-                                        <!--<td>{{ game.date }}</td>-->
-                                    <!--</tr>-->
-                                </tbody>
-                            </table>
+                                    <tr ng-repeat="(index, game) in scores[theme+20]" >
+                                        <th scope="row">{{ index + 1 }}</th>
+                                        <td>{{ game.player }}</td>
+                                        <td>{{ game.time | date: 'm:ss' }}</td>
+                                        <td>{{ game.guesses }}</td>
+                                        <td>{{ game.date }}</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

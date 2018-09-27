@@ -133,6 +133,7 @@ h2, h3 {
 
 .tableHead {
     background-color: #ede0ff !important;
+    margin-top: -2px;
 }
 
 .tab-content{
@@ -146,6 +147,11 @@ h2, h3 {
 .nav-item, .nav-item:hover {
     color: #e67300;
     font-weight: bold;
+}
+
+.nav-tabs {
+    border: 0 !important;
+
 }
 
 
@@ -202,18 +208,19 @@ th {
     overflow-y: scroll;
     margin-bottom: 25px;
 }
+
+
 .force-overflow {
-    min-height: 450px;
+    min-height: 250px;
 }
-
 /*tbody {*/
-    /*overflow-y: scroll;*/
-    /*position: absolute;*/
+/*overflow-y: scroll;*/
+/*position: absolute;*/
 /*}*/
-
 .scrollbar-warning::-webkit-scrollbar {
     width: 12px;
-    background-color: #F5F5F5; }
+    background-color: #F5F5F5;
+}
 
 .scrollbar-warning::-webkit-scrollbar-thumb {
     border-radius: 10px;
@@ -223,9 +230,32 @@ th {
 .scrollbar-success::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
     background-color: #F5F5F5;
-    border-radius: 10px; }
+    border-radius: 10px;
+}
 
-.player {
-    width: 30%;
+
+
+.playerHead {
+    max-width: 10px;
+}
+
+tr {
+    position: sticky;
+}
+
+.table > thead tr:nth-child(1) th{
+    background: #ede0ff ;
+    position: sticky;
+    top: -1px;
+    z-index: 10;
+
+}
+table {
+ table-layout: fixed;
+}
+
+table th, table td {
+ overflow: hidden;
+ text-overflow: ellipsis;
 }
 

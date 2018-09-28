@@ -8,6 +8,15 @@
             const size = choosen_option.split('=')[2]
             console.log(choosen_option);
 
+            const win_gifs = {'Dogs': ['DogWin1.gif', 'DogWin1.gif', 'win.gif'],
+                                'Cats': ['CatsWin1.gif', 'CatsWin2.gif', 'CatsWin3.gif', 'CatsWin4.gif', 'win.gif'],
+                                'WildAnimals': ['win.gif']
+            }
+
+            Math.random.seed
+
+            $scope.winGif = win_gifs[$scope.theme_name][Math.floor(Math.random() * win_gifs[$scope.theme_name].length)]
+            console.log($scope.winGif)
 
             $http.get(`/api/decks/${choosen_option}`).then(function(response){
                 $scope.cards = [];
@@ -33,10 +42,9 @@
             $scope.guesses = 0;
             $scope.time = 0;
             $scope.end = false;
-
             $scope.flipCard = card => {
-                // open_modal()
                 if (!card.isFlipped && flipped_cards.length < 2){
+//                $('#myModal').modal('show')
                     if (!start_game) {
                         start_game = true;
                         timer = $interval(function () {
@@ -67,6 +75,7 @@
                 }
 
             }
+
             check_for_end = function () {
 //                let deck_cards = $scope.cards.flat();
                 let deck_cards = $scope.cards.reduce(function(a, b) {
@@ -76,21 +85,22 @@
                     $scope.end = true;
                     stop_game();
                     $('#myModal').modal('show')
+                    // open_modal()
                 }
-
             };
+
             check = function(deck_card){
                 return deck_card.isFlipped === false;
-
             };
+
             stop_game = function(){
                 if (angular.isDefined(timer)){
                     $interval.cancel(timer);
-
                     timer = undefined;
-                }
 
+                }
             };
+
             $scope.showAlert = false;
 
             $scope.save = function() {

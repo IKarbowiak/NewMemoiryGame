@@ -216,7 +216,7 @@ th {
 
 .scrollbar {
     float: left;
-    height: 300px;
+    height: 350px;
     width: 100%;
     background: #fff;
     overflow-y: scroll;
@@ -225,7 +225,7 @@ th {
 
 
 .force-overflow {
-    min-height: 250px;
+    min-height: 300px;
 }
 /*tbody {*/
 /*overflow-y: scroll;*/
@@ -273,3 +273,8 @@ table th, table td {
  text-overflow: ellipsis;
 }
 
+.win-gif {
+    margin-top: 2%;
+    max-width: 100%;
+    max-height: 500px;
+}

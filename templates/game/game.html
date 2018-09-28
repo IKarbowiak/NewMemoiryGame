@@ -29,21 +29,16 @@
 
             </table>
         </div>
-
-        <div class="endButton-l">
-            <button class="btn btn-outline-secondary">Back to menu</button>
+        <div class="endButton-l" ng-if="end">
+            <a class="btn btn-outline-secondary" href="start_site.html">Back to menu</a>
         </div>
-        <div class="endButton-r">
-            <button class="btn btn-outline-secondary">High Scores</button>
+        <div class="endButton-r" ng-if="end">
+            <a class="btn btn-outline-secondary" href="high_scores.html">High scores</a>
         </div>
-        <div>
-            <div class="shadow-sm p-1 mb-3 bg-white rounded guess">
-                <span class="boldtext">Guesses:</span> {{guesses}}
-                <span class="boldtext">Time:</span> {{time | date: 'm:ss'}}
-            </div>
+        <div class="shadow-sm p-1 mb-3 bg-white rounded guess">
+            <span class="boldtext">Guesses:</span> {{guesses}}
+            <span class="boldtext">Time:</span> {{time | date: 'm:ss'}}
         </div>
-
-
 
         <div class="modal" tabindex="-1" role="dialog" id="myModal">
           <div class="modal-dialog" role="document">
@@ -68,8 +63,7 @@
                       <div class="form-group"></div>
                       <input type="name" class="form-control" id="InputName" placeholder="Please enter your name" ng-model="name">
                   </form>
-                  <p></p>
-                  <img src="/static/src/win.gif">
+                  <img src="/static/src/win_gifs/{{winGif}}" class="win-gif">
               </div>
               <div class="modal-footer ok">
                 <!--<button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>-->

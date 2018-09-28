@@ -37,7 +37,7 @@
                                         </tr>
                                         <tr ng-repeat="(index, game) in scores[theme+10]" >
                                             <th scope="row">{{ index + 1 }}</th>
-                                            <td>{{ game.player }}</td>
+                                            <td title="{{ game.player }}">{{ game.player }}</td>
                                             <td>{{ game.time | date: 'm:ss' }}</td>
                                             <td>{{ game.guesses }}</td>
                                             <td>{{ game.date }}</td>
@@ -69,7 +69,7 @@
                                     </tr>
                                     <tr ng-repeat="(index, game) in scores[theme+16]" >
                                         <th scope="row">{{ index + 1 }}</th>
-                                        <td>{{ game.player }}</td>
+                                        <td title="{{ game.player }}">{{ game.player }}</td>
                                         <td>{{ game.time | date: 'm:ss' }}</td>
                                         <td>{{ game.guesses }}</td>
                                         <td>{{ game.date }}</td>
@@ -99,7 +99,7 @@
                                     </tr>
                                     <tr ng-repeat="(index, game) in scores[theme+20]" >
                                         <th scope="row">{{ index + 1 }}</th>
-                                        <td>{{ game.player }}</td>
+                                        <td title="{{ game.player }}">{{ game.player }}</td>
                                         <td>{{ game.time | date: 'm:ss' }}</td>
                                         <td>{{ game.guesses }}</td>
                                         <td>{{ game.date }}</td>
@@ -120,5 +120,3 @@
 {% endverbatim %}
 
 {%endblock%}
-
-

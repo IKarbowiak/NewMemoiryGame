@@ -42,6 +42,19 @@
             $scope.guesses = 0;
             $scope.time = 0;
             $scope.end = false;
+
+            let flipBack = undefined;
+
+            start_timeout = function (card) {
+                flipBack = setTimeout(_ => {
+                    card.isFlipped =! card.isFlipped;
+                    flipped_cards = [];
+                    $scope.$apply();
+                }, 3000);  // TODO: adjust time to cards number
+
+            };
+
+
             $scope.flipCard = card => {
                 if (!card.isFlipped && flipped_cards.length < 2){
 //                $('#myModal').modal('show')
@@ -54,7 +67,11 @@
 
                     card.isFlipped =! card.isFlipped;
                     flipped_cards.push(card);
+                    if (flipped_cards.length === 1){
+                        start_timeout(card)
+                    }
                     if (flipped_cards.length === 2){
+                        clearTimeout(flipBack);
                         $scope.guesses ++;
                         if (flipped_cards[0].name === flipped_cards[1].name) {
                             flipped_cards[0].isGuessed = true;
@@ -75,6 +92,7 @@
                 }
 
             }
+
 
             check_for_end = function () {
 //                let deck_cards = $scope.cards.flat();

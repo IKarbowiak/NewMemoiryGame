@@ -4,19 +4,21 @@
     angular.module('memo')
         .controller('flipCtrl', ['$scope', '$http', '$interval', function($scope, $http, $interval){
             const choosen_option = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.document.URL.length);
-            $scope.theme_name = choosen_option.split('&')[0].split('=')[1]
-            const size = choosen_option.split('=')[2]
+            $scope.theme_name = choosen_option.split('&')[0].split('=')[1];
+            const size = choosen_option.split('=')[2];
             console.log(choosen_option);
 
-            const win_gifs = {'Dogs': ['DogWin1.gif', 'DogWin1.gif', 'win.gif'],
+            const timeout_for_single_card = {'10': 3000, '16': 3500, '20': 4000};
+
+            const win_gifs = {'Dogs': ['DogWin1.gif', 'DogWin2.gif', 'DogWin3.gif','DogWin4.gif', 'win.gif'],
                                 'Cats': ['CatsWin1.gif', 'CatsWin2.gif', 'CatsWin3.gif', 'CatsWin4.gif', 'win.gif'],
                                 'WildAnimals': ['win.gif']
-            }
+            };
 
-            Math.random.seed
+            Math.random.seed;
 
             $scope.winGif = win_gifs[$scope.theme_name][Math.floor(Math.random() * win_gifs[$scope.theme_name].length)]
-            console.log($scope.winGif)
+            console.log($scope.winGif);
 
             $http.get(`/api/decks/${choosen_option}`).then(function(response){
                 $scope.cards = [];
@@ -49,8 +51,10 @@
                 flipBack = setTimeout(_ => {
                     card.isFlipped =! card.isFlipped;
                     flipped_cards = [];
+                    $scope.guesses ++;
+                    console.log($scope.cards);
                     $scope.$apply();
-                }, 3000);  // TODO: adjust time to cards number
+                }, timeout_for_single_card[size]);
 
             };
 
